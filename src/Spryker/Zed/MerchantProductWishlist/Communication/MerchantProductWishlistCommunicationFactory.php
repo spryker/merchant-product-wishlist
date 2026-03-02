@@ -19,9 +19,6 @@ use Spryker\Zed\MerchantProductWishlist\MerchantProductWishlistDependencyProvide
  */
 class MerchantProductWishlistCommunicationFactory extends AbstractCommunicationFactory
 {
-    /**
-     * @return \Spryker\Zed\MerchantProductWishlist\Communication\Expander\MerchantProductWishlistItemExpanderInterface
-     */
     public function createMerchantProductWishlistItemExpander(): MerchantProductWishlistItemExpanderInterface
     {
         return new MerchantProductWishlistItemExpander(
@@ -30,17 +27,11 @@ class MerchantProductWishlistCommunicationFactory extends AbstractCommunicationF
         );
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductWishlist\Dependency\Facade\MerchantProductWishlistToProductFacadeInterface
-     */
     public function getProductFacade(): MerchantProductWishlistToProductFacadeInterface
     {
         return $this->getProvidedDependency(MerchantProductWishlistDependencyProvider::FACADE_PRODUCT);
     }
 
-    /**
-     * @return \Spryker\Zed\MerchantProductWishlist\Dependency\Facade\MerchantProductWishlistToMerchantProductFacadeInterface
-     */
     public function getMerchantProductFacade(): MerchantProductWishlistToMerchantProductFacadeInterface
     {
         return $this->getProvidedDependency(MerchantProductWishlistDependencyProvider::FACADE_MERCHANT_PRODUCT);
